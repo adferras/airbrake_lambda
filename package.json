@@ -1,0 +1,21 @@
+{
+  "name": "airbrake_lambda",
+  "version": "0.0.0",
+  "author": "adamferras",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "0.10.36"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build:function": "babel --optional runtime"
+  },
+  "devDependencies": {
+    "babel": "< 6",
+    "babel-runtime": "< 6"
+  }
+}

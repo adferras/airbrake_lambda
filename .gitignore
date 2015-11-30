@@ -1,0 +1,24 @@
+# Logs
+/logs/
+*.log
+npm-debug.log*
+
+# Coverage things
+/lib-cov/
+/coverage/
+
+# NPM things
+/node_modules/
+/.npm/
+
+# OS things
+.DS_Store
+
+# Misc
+*.swp
+/dest/
+*.zip
+
+# Secrets and config
+.env
+.jarbs
