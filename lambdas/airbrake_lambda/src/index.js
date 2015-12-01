@@ -10,6 +10,7 @@ exports.handler = function(event, context) {
 
   var err = new Error('Something went terribly wrong');
   airbrake.notify(err, function(err, url) {
+    console.log('Error thrown');
     if (err) throw err;
   });
 };
