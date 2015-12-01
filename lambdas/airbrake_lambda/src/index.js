@@ -2,12 +2,14 @@
 // If you rename this file or the handler function,
 // you will need to update the Lambda configs.
 
-export function handler(event, context) {
+exports.handler = function(event, context) {
 
   // Your code here
 
   var airbrake = require('airbrake').createClient("d2c8533a402ca3bd8c59082666b14c17");
-  airbrake.handleExceptions();
 
-  throw new Error('I am an uncaught exception');
+  var err = new Error('Something went terribly wrong');
+  airbrake.notify(err, function(err, url) {
+    if (err) throw err;
+  });
 };

@@ -22,3 +22,6 @@ npm-debug.log*
 # Secrets and config
 .env
 .jarbs
+
+# airbrake
+/event-samples/
