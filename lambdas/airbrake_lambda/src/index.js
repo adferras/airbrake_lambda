@@ -6,11 +6,12 @@ exports.handler = function(event, context) {
 
   // Your code here
 
-  var airbrake = require('airbrake').createClient("d2c8533a402ca3bd8c59082666b14c17");
-
-  var err = new Error('Something went terribly wrong');
-  airbrake.notify(err, function(err, url) {
-    console.log('Error thrown');
-    if (err) throw err;
+  var airbrake = require('airbrake').createClient("d2c8533a402ca3bd8c59082666b14c17", 'production');
+  airbrake.on('vars', function(type, vars) {
+      vars.lambda_event = event;
   });
+
+  airbrake.handleExceptions();
+
+  throw new Error('Something went terribly wrong');
 };
